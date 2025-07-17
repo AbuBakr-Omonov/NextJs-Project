@@ -4,7 +4,7 @@ import React from 'react'
 const ProductsPage = ({data}:any) => {
   return (
     <div>
-      <div className=' mt-[20px] grid grid-cols-4 gap-4 max-[990px]:grid-cols-3 max-[768px]:grid-cols-2 max-[540px]:grid-cols-1'>
+      <div className='container mx-auto mt-[20px] grid grid-cols-4 gap-4 max-[990px]:grid-cols-3 max-[768px]:grid-cols-2 max-[540px]:grid-cols-1'>
         {
             data?.products.map((product:any) => (
                 <div key={product.id} className=" w-full  bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700 transition-all hover:shadow-md">

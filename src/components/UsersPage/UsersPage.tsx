@@ -11,7 +11,7 @@ interface Props {
 const UsersPage: React.FC<Props>= ({data}) => {
   return (
     <div>
-        <div className='mt-[20px] grid grid-cols-4 gap-4 max-[990px]:grid-cols-3 max-[768px]:grid-cols-2 max-[540px]:grid-cols-1'>
+        <div className='container mx-auto mt-[20px] grid grid-cols-4 gap-4 max-[990px]:grid-cols-3 max-[768px]:grid-cols-2 max-[540px]:grid-cols-1'>
 
          {
             data?.users?.map((user:IUser) =>(

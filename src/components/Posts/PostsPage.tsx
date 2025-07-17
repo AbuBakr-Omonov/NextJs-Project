@@ -11,7 +11,7 @@ interface Props {
 const PostsPage: React.FC<Props> = ({ data }) => {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4 sm:px-10">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {data?.posts?.map((post: IPost) => (
           <div
             key={post.id}
