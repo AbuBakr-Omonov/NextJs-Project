@@ -6,8 +6,8 @@ interface Props{
         id:string
     }
 }
-const RecipesDetail =async ({params} : Props) => {
-    const id = await params.id
+export default async function UserDetail({ params }: { params: Promise<{ id: string }>}){
+       const {id} = await params;
     console.log(id)
    const data = await fetch(`https://dummyjson.com/recipes/${id}`)
     const recipesDeatail = await data.json()
@@ -20,4 +20,3 @@ const RecipesDetail =async ({params} : Props) => {
   )
 }
 
-export default React.memo(RecipesDetail)
