@@ -2,6 +2,7 @@
 import { IUser } from '@/types/types';
 import React from 'react'
 import { Mail} from "lucide-react" 
+import { useRouter } from 'next/navigation';
 
 interface Props {
   data: {
@@ -9,6 +10,7 @@ interface Props {
   };
 }
 const UsersPage: React.FC<Props>= ({data}) => {
+    const router = useRouter()
   return (
     <div>
         <div className='container mx-auto mt-[20px] grid grid-cols-4 gap-4 max-[990px]:grid-cols-3 max-[768px]:grid-cols-2 max-[540px]:grid-cols-1'>
@@ -34,7 +36,7 @@ const UsersPage: React.FC<Props>= ({data}) => {
                    </div>
 
                    <div className="flex-grow flex flex-col gap-4 p-6 pt-0">
-                        <button className="mt-auto w-full py-2 px-4 bg-gray-900 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus:ring-gray-400 transition-colors">
+                        <button onClick={() => router.push(`/${user.id}`)} className="mt-auto w-full py-2 px-4 bg-gray-900 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus:ring-gray-400 transition-colors">
                           View Profile
                         </button>
                    </div>

@@ -1,7 +1,9 @@
 "use client"
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const ProductsPage = ({data}:any) => {
+  const router = useRouter()
   return (
     <div>
       <div className='container mx-auto mt-[20px] grid grid-cols-4 gap-4 max-[990px]:grid-cols-3 max-[768px]:grid-cols-2 max-[540px]:grid-cols-1'>
@@ -10,6 +12,7 @@ const ProductsPage = ({data}:any) => {
                 <div key={product.id} className=" w-full  bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700 transition-all hover:shadow-md">
                       <div className="w-full h-48 overflow-hidden">
                         <img
+                           onClick={() => router.push(`products/${product.id}`)}
                           src={product.thumbnail || "/placeholder.svg"}
                           alt={product.title}
                           className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"

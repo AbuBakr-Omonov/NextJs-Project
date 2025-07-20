@@ -72,3 +72,17 @@ export interface ICart {
   totalQuantity: number;
 }
 
+export interface Product {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  rating: number;
+  brand: string;
+  category: string;
+  stock: number;
+  thumbnail: string;
+  images: string;
+  tags: string[];
+}
+

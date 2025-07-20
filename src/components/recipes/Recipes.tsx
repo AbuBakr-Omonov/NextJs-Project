@@ -1,6 +1,9 @@
+"use client"
+
 import { Recipe } from '@/types/types';
 import React from 'react';
 import { Clock, UtensilsCrossed, Star } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 interface Props {
   data: {
@@ -9,16 +12,19 @@ interface Props {
 }
 
 const RecipesCart: React.FC<Props> = ({ data }) => {
+  const router = useRouter()
   return (
     <div className="bg-white min-h-screen py-10 px-4 sm:px-10">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {data?.recipes.map((rec: Recipe) => (
+          
           <div
             key={rec.id}
             className="bg-gray-100 rounded-2xl shadow-md p-4 transition-transform transform hover:scale-101 hover:shadow-xl"
           >
             <div className="relative rounded-xl overflow-hidden">
               <img
+               onClick={() => router.push(`recipes/${rec.id}`)}
                 src={rec.image}
                 alt={rec.name}
                 className="w-full h-52 object-cover rounded-xl"
