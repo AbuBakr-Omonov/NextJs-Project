@@ -10,6 +10,8 @@ interface Props {
   };
 }
 const UsersPage: React.FC<Props>= ({data}) => {
+  console.log(data);
+  
     const router = useRouter()
   return (
     <div>

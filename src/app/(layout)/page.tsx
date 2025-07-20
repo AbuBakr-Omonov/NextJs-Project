@@ -1,4 +1,3 @@
-import Recipes from '@/components/recipes/Recipes';
 import UsersPage from '@/components/UsersPage/UsersPage';
 import { UsersIcon } from 'lucide-react';
 import { Metadata } from 'next';
