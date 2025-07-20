@@ -1,14 +1,10 @@
 import UsersDeatilItem from '@/components/UsersPage/UsersDeatilItem';
 import React from 'react';
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
 
-const UserDetail = async ({ params }: PageProps) => {
-  const {id} = params;
+
+const UserDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const {id} = await params;
 
   const data = await fetch(`https://dummyjson.com/users/${id}`);
   const usersDetail = await data.json();
