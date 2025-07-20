@@ -8,7 +8,7 @@ interface PageProps {
 }
 
 const UserDetail = async ({ params }: PageProps) => {
-  const id = params.id;
+  const {id} = params;
 
   const data = await fetch(`https://dummyjson.com/users/${id}`);
   const usersDetail = await data.json();
